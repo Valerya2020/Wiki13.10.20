@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <style media="screen">
+    .box {
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      background: grey;
+      transition: all .2s;
+    }
+    .red {
+      background: red;
+    }
+    .blue {
+      background: blue;
+    }
+    .white {
+      background: white;
+      border: 5px solid black;
+      box-sizing: border-box;
+    }
+    .orange {
+      background: orange;
+    }
+    .hidden {
+      opacity: 0;
+      border-radius: 50%;
+    }
+    .bloker {
+      display: none;
+    }
+    .rounder {
+      border-radius: 40px;
+      opacity: 60%;
+    }
+    .move_rotate {
+      transform: rotate(45deg);
+      width: 100px;
+      height: 100px;
+      margin: 10vh;
+    }
+    .black {
+      background: black;
+    }
+  </style>
+  <script type="text/javascript">
+  $(document).ready(function(){
+  	$(".red").click(function(){
+  		$(".circle").css("border-radius", "50%");
+  	});
+    $(".blue").click(function(){
+  		$(".circle").css("border-radius", "30%");
+  	});
+    $(".orange").click(function(){
+  		$(".circle").css("border-radius", "0%");
+  	});
+    $(".white").click(function(){
+      $(this).css({
+        width: function(index, value) {
+          return parseFloat (value) *.9;
+        }
+      });
+    });
+    $(".circle").click(function(){
+      $(".white").css({
+        width: function(index, value) {
+          return parseFloat (value) *2;
+        }
+      });
+    });
+    $(".move").click(function(){
+      	$(".transparant.hidden").removeClass("bloker");
+        setTimeout(function(){
+              $(".transparant").toggleClass("hidden");}, 1);
+
+  		setTimeout(function(){
+        $(".transparant.hidden").addClass("bloker");}, 300);
+  	});
+    $(".red").click(function () {
+      if ($(".red").hasClass("rounder")) {
+        $(".orange").toggleClass("hidden");
+      }
+      $(this).toggleClass("rounder");
+    });
+	$(".transparant").click(function(){
+		$(".box").toggleClass("black");
+	});
+  $(".move").click(function(){
+    $(".move.black").toggleClass("move_rotate");
+  });
+  });
+  </script>
+  <body>
+    <div class="box red"></div>
+    <div class="box blue"></div>
+    <div class="box orange"></div>
+    <div class="box white"></div>
+    <div class="box circle"></div>
+    <div class="box circle"></div>
+    <div class="box move"></div>
+    <div class="box move"></div>
+    <div class="box transparant"></div>
+    <div class="box circle"></div>
+  </body>
+</html>
