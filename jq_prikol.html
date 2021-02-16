@@ -78,10 +78,26 @@ animation: color_change 8s infinite;
     top:e.pageY - 10
   });
 });
+let myArray = [
+  "Apples",
+  "Bananas",
+  "Pears"
+];
+
+let randomItem = myArray[Math.floor(Math.random()*myArray.length)];
+let a = myArray.length;
+let b = Math.random();
+let c = Math.floor(a * b);
+// document.body.innerHTML = randomItem;
+$('#randomresult').html(randomItem + '=' + c + '=' + b + "*" + a);
+
   })
+
+
     </script>
   </head>
   <body>
+    <div id="randomresult"></div>
     <div id="cursor"></div>
     <div id="status">0,0</div>
     <div id="lr"></div>
