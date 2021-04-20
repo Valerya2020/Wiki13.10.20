@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title></title>
+  </head>
+  <style media="screen">
+    * {
+      box-sizing: border-box;
+    }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+table, #new_row{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+#new_row {
+  display: flex;
+}
+#new_row > * {
+  display: table-cell;
+  -webkit-appearence: none;
+  border-radius: 0;
+}
+#new_row > *:first-child {
+  width: calc(10% - 32px);
+}
+th, td {
+  border: 1px solid black;
+  text-align: left;
+  font-weight: 400;
+  height: 32px;
+  padding: 5px 8px 6px;
+  width: 20%;
+}
+th:last-child,
+td:last-child,
+#new_row > *:last-child {
+  border-right: none;
+  width: 32px;
+}
+th:first-child,
+td:first-child,
+#new_row > *:first-child {
+  border-left: none;
+  width: auto;
+}
+#new_row > *:focus {
+  outline: none;
+}
+th {
+  color: #999;
+}
+th:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+td:nth-of-type(2),
+#new_row > *:nth-child(2) {
+  font-weight: 600;
+  width: 30%;
+}
+td span {
+  display: inline-block;
+  border-radius: 4px;
+  background: #eee;
+  padding: 4px 8px;
+  margin: 2px 2px 4px 0;
+}
+.sp_red {
+background-color: rgba(255, 0, 26, 0.2);
+}
+.sp_green {
+background-color: rgba(0, 135, 107, 0.2);
+}
+.sp_yellow {
+    background: rgba(233, 168, 0, 0.2);
+}
+.sp_blue {
+        background: rgba(45, 170, 219, 0.3);
+}
+.sp_green2 {
+      background: rgba(45, 170, 0, 0.3);
+}
+
+
+
+  </style>
+  <script type="text/javascript">
+$(document).ready(function() {
+  let week;
+  let name_of;
+  let date;
+  let disc;
+  let type;
+  let next_row;
+
+
+  $("#new_row button").click(function() {
+    week = $('[name="week"]').val();
+    name_of = $('[name="name_of"]').val();
+    date = $('[name="date"]').val();
+    disc = $('[name="disc"]').val();
+    type = $('[name="type"]').val();
+    next_row = '<tr><td>'+week+'</td><td>'+name_of+'</td><td>'+date+'</td><td><span class="sp_red">'+disc+'</span></td><td><span class="sp_green">'+type+'</span></td><td></td></tr>'
+
+$("table tr").last().after(next_row);
+    $('#new_row input').val("");
+  })
+})
+  </script>
+  <body>
+<table>
+  <h3>Расписание</h3>
+  <thead>
+    <tr>
+      <th>Неделя</th>
+      <th>Название</th>
+      <th>Дата</th>
+      <th>Предмет</th>
+      <th>Тип</th>
+      <th>+</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Верстаем форму</td>
+      <td>Apr 6, 2020</td>
+      <td><span class="sp_red">Технологии</span></td>
+      <td><span class="sp_green">Воркшоп</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Вводная лекция</td>
+      <td>Jan 15, 2020</td>
+      <td><span class="sp_yellow">Арт-практика</span></td>
+      <td><span class="sp_yellow">Лекция</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Доделать адаптив</td>
+      <td>Nov 6, 2020</td>
+      <td><span class="sp_yellow">Арт-практика</span></td>
+      <td><span class="sp_blue">Домашка</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Ревью анимаций</td>
+      <td>Nov 24, 2020</td>
+      <td><span class="sp_red">Технологии</span></td>
+      <td><span class="sp_green2">Ревью</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Ревью презентаций</td>
+      <td>Dec 20, 2020</td>
+      <td><span class="sp_yellow">Арт-практика</span></td>
+      <td><span class="sp_green2">Ревью</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Задачи по вёрстке</td>
+      <td>Dec 29, 2020</td>
+      <td><span class="sp_red">Технологии</span></td>
+      <td><span class="sp_blue">Домашка</span></td>
+      <td></td>
+    </tr>
+    <tbody>
+
+    </tbody>
+  </thead>
+</table>
+<form id="new_row">
+<input type="text" name="week" value="">
+<input type="text" name="name_of" value="">
+<input type="text" name="date" value="">
+<select class="" name="disc">
+  <option value="Технологии">Технологии</option>
+</select>
+<select class="" name="type">
+  <option value="Воркшоп">Воркшоп</option>
+</select>
+
+<button type="button" name="button">+</button>
+</form>
+<div class="test">
+
+</div>
+  </body>
+</html>
