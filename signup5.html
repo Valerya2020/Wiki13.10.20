@@ -107,6 +107,9 @@ $(document).ready(function() {
     week = $('[name="week"]').val();
     name_of = $('[name="name_of"]').val();
     date = $('[name="date"]').val();
+
+    
+
     disc = $('[name="disc"]').val();
     type = $('[name="type"]').val();
     next_row = '<tr><td>'+week+'</td><td>'+name_of+'</td><td>'+date+'</td><td><span class="sp_red">'+disc+'</span></td><td><span class="sp_green">'+type+'</span></td><td></td></tr>'
@@ -186,8 +189,9 @@ $("table tr").last().after(next_row);
 <input type="text" name="name_of" value="">
 <input type="text" name="date" value="">
 <select class="" name="disc">
-  <option value="Технологии">Технологии</option>
-  <option value="Арт-практика">Арт-практика</option>
+  <option value="disc-none">Предмет</option>
+  <option value="disc-tech">Технологии</option>
+  <option value="disc-art">Арт-практика</option>
 </select>
 <select class="" name="type">
   <option value="Воркшоп">Воркшоп</option>
