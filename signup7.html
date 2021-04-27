@@ -16,6 +16,7 @@
     position: absolute;
     display: block;
     border-radius: 50%;
+    transition: 10s;
     }
     .figure1 {
       background-color: #84271F;
@@ -30,6 +31,7 @@
       width: 1000px;
       left: calc(50vw - 500px);
       top: calc(50vh - 500px);
+      animation: scale1 50s linear infinite;
     }
     .figure3 {
       background-color: #84271F;
@@ -54,6 +56,7 @@
       left: 40vw;
       top: 0px;
       transform: rotate(45deg);
+      transition: 10s;
     }
     .figure6 {
       position: absolute;
@@ -64,6 +67,7 @@
       left: 50vw;
       top: 20vh;
       transform: rotate(45deg);
+      transition: 10s;
     }
     .figure7 {
       background-color: #CA2208;
@@ -71,6 +75,8 @@
       width: 500px;
       left: calc(50vw - 250px);
       top: calc(50vh - 250px);
+      animation: colorisation2 50s linear infinite;
+      transition: 10s;
     }
     .figure8 {
       position: absolute;
@@ -80,6 +86,13 @@
       width: 300px;
       left: calc(50vw - 150px);
       top: calc(50vh - 150px);
+        /* transition: 10s; */
+      animation: rotation 50s linear infinite;
+      transition: 10s;
+    }
+    .figure8:hover {
+      animation: colorisation 2s linear reverse infinite;
+      /* background-color: #E6DACA; */
     }
     .figure9 {
       position: absolute;
@@ -90,6 +103,8 @@
       bottom: -20px;
       right: -10px;
       transform: rotate(-45deg);
+      animation: rotation2 120s linear infinite;
+      transition: 10s;
     }
     .figure10 {
       position: absolute;
@@ -100,6 +115,8 @@
       bottom: 100px;
       right: 100px;
       transform: rotate(-45deg);
+      animation: rotation2 120s linear infinite;
+      transition: 10s;
     }
     .figure11 {
       position: absolute;
@@ -110,6 +127,8 @@
       bottom: -200px;
       right: 300px;
       transform: rotate(-45deg);
+      animation: rotation2 120s linear infinite;
+      transition: 10s;
     }
     .figure12 {
       position: absolute;
@@ -120,6 +139,8 @@
       bottom: -200px;
       right: 300px;
       transform: rotate(-45deg);
+      animation: rotation2 120s linear infinite;
+      transition: 10s;
     }
     .figure13 {
       position: absolute;
@@ -130,6 +151,8 @@
       top: -200px;
       left: 300px;
       transform: rotate(-45deg);
+      animation: rotation2 120s linear infinite;
+      transition: 10s;
     }
     .figure14 {
       position: absolute;
@@ -140,6 +163,8 @@
       top: 0px;
       left: 300px;
       transform: rotate(-45deg);
+      animation: rotation2 120s linear infinite;
+      transition: 10s;
     }
     .figure15 {
       position: absolute;
@@ -150,6 +175,8 @@
       top: 0px;
       left: -100px;
       transform: rotate(-45deg);
+      animation: rotation2 120s linear infinite;
+      transition: 10s;
     }
     .figure16 {
       position: absolute;
@@ -160,10 +187,59 @@
       top: -100px;
       left: -50px;
       transform: rotate(-45deg);
+      animation: rotation2 120s linear infinite;
+      transition: 10s;
+    }
+
+    @keyframes rotation {
+      0% {transform: rotate(0deg);}
+      50% {transform: rotate(180deg); background-color: #ACAAB8;}
+      100% {transform: rotate(360deg); background-color: black;}
+    }
+    @keyframes rotation2 {
+      0% {transform: rotate(-45deg);}
+      100% {transform: rotate(315deg);}
+    }
+    @keyframes colorisation {
+      0% {transform: rotate(0deg); background-color: black;}
+      50% {transform: rotate(180deg); background-color: #E6DACA;}
+      100% {transform: rotate(360deg); background-color: black;}
+    }
+    @keyframes colorisation2 {
+      0% {background-color: #CA2208;}
+      25% {background-color: #E6DACA;}
+      50% {background-color: #84271F;}
+      100% {background-color: #CA2208;}
+    }
+    @keyframes scale1 {
+      0% {transform: scale(1);}
+      25% {transform: scale(1.5);}
+      50% {transform: scale(3);}
+      100% {transform: scale(1);}
+    }
+    @keyframes scale2 {
+      0% {transform: scale(1);}
+      25% {transform: scale(1.5);}
+      50% {transform: scale(3);}
+      100% {transform: scale(1);}
     }
     </style>
     <script type="text/javascript">
+    $(document).ready(function() {
 
+      if ($("div").hasClass("figure5, figure6")) {
+        $(".figure5").click(function() {
+          $(this).animate({left: "+=200", top: "-=200"}, 10);
+        })
+        $(".figure6").click(function() {
+          $(this).animate({left: "-=200", top: "+=200"}, 10);
+        })
+      } else {
+        $("div").click(function() {
+          $(this).animate({left: "-=200", top: "+=200"}, 10);
+        })
+      }
+    })
     </script>
   </head>
   <body>
@@ -175,13 +251,13 @@
 <div class="figure6"></div>
 <div class="circle figure7"></div>
 <div class="figure8"></div>
-<div class="figure9"></div>
-<div class="figure10"></div>
-<div class="figure11"></div>
-<div class="figure12"></div>
-<div class="figure13"></div>
-<div class="figure14"></div>
-<div class="figure15"></div>
-<div class="figure16"></div>
+<div class="figere-p figure9"></div>
+<div class="figere-p figure10"></div>
+<div class="figere-p figure11"></div>
+<div class="figere-p figure12"></div>
+<div class="figere-p figure13"></div>
+<div class="figere-p figure14"></div>
+<div class="figere-p figure15"></div>
+<div class="figere-p figure16"></div>
   </body>
 </html>
