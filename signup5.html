@@ -7,90 +7,89 @@
     <title></title>
   </head>
   <style media="screen">
-    * {
-      box-sizing: border-box;
-    }
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    }
+  *{
+  box-sizing: border-box;
+  }
 
-table, #new_row {
+  body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  table, #new_row{
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
-}
-
-th, td, #new_row > * {
+  }
+  th, td, #new_row > * {
   border: 1px solid #ddd;
   text-align: left;
   font-weight: 400;
-  height: 32px;
   padding: 5px 8px 6px;
+  height: 32px;
   width: 20%;
   margin: 0;
-}
-th:last-child,
-td:last-child,
-#new_row > *:last-child {
+  }
+  th:last-child,
+  td:last-child,
+  #new_row > *:last-child {
   border-right: none;
   width: 32px;
-}
-th:first-child,
-td:first-child,
-#new_row > *:first-child {
+  }
+  th:first-child,
+  td:first-child,
+  #new_row > *:first-child {
   border-left: none;
   width: auto;
-}
-
-th {
+  }
+  th{
   color: #999;
-}
-th:hover {
+  }
+  th:hover {
   background-color: #eee;
   cursor: pointer;
-}
-td:nth-of-type(2),
-#new_row > *:nth-child(2) {
+  }
+
+  td:nth-of-type(2), #new_row > *:nth-child(2) {
   font-weight: 600;
   width: 30%;
-}
-td span {
+  }
+  td span{
   display: inline-block;
   border-radius: 4px;
   background: #eee;
   padding: 4px 8px;
-  margin: 2px 2px 4px 0;
-}
-.sp_red {
-background-color: rgba(255, 0, 26, 0.2);
-}
-.sp_green {
-background-color: rgba(0, 135, 107, 0.2);
-}
-.sp_yellow {
-    background: rgba(233, 168, 0, 0.2);
-}
-.sp_blue {
-        background: rgba(45, 170, 219, 0.3);
-}
-.sp_green2 {
-      background: rgba(45, 170, 0, 0.3);
-}
-
-#new_row {
+  margin: 2px 2px 2px 0;
+  }
+  .sp_red {
+  background-color: rgba(255, 0, 26, 0.2);
+  }
+  .sp_green {
+  background-color: rgba(0, 135, 107, 0.2);
+  }
+  .sp_yellow {
+      background: rgba(233, 168, 0, 0.2);
+  }
+  .sp_blue {
+          background: rgba(45, 170, 219, 0.3);
+  }
+  .sp_green2 {
+        background: rgba(45, 170, 0, 0.3);
+  }
+  #new_row{
   display: flex;
-}
-#new_row > * {
+  }
+
+  #new_row > * {
   display: table-cell;
-  -webkit-appearence: none;
+  -webkit-appearance: none;
   border-radius: 0;
-}
-#new_row > *:focus {
+  }
+  #new_row > *:focus {
   outline: none;
-}
-#new_row > *:first-child {
+  }
+  #new_row > *:first-child {
   width: calc(10% - 32px);
-}
+  }
+
 
 
   </style>
@@ -188,9 +187,13 @@ $("table tr").last().after(next_row);
 <input type="text" name="date" value="">
 <select class="" name="disc">
   <option value="Технологии">Технологии</option>
+  <option value="Арт-практика">Арт-практика</option>
 </select>
 <select class="" name="type">
   <option value="Воркшоп">Воркшоп</option>
+  <option value="Лекция">Лекция</option>
+  <option value="Домашка">Домашка</option>
+  <option value="Ревью">Ревью</option>
 </select>
 
 <button type="button" name="button">+</button>
