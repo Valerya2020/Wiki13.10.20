@@ -112,11 +112,10 @@ $(document).ready(function() {
     disc = $('[name="disc"]').val();
     type = $('[name="type"]').val();
 
+    next_row = '<tr><td>'+week+'</td><td>'+name_of+'</td><td>'+date+'</td><td><span class="sp_red">'+disc+'</span></td><td><span class="sp_green">'+type+'</span></td><td></td></tr>';
     if ($("option").hasClass("art")) {
       $(this).children("span").addClass("sp_yellow");
     }
-    next_row = '<tr><td>'+week+'</td><td>'+name_of+'</td><td>'+date+'</td><td><span class="sp_red">'+disc+'</span></td><td><span class="sp_green">'+type+'</span></td><td></td></tr>';
-
 
 $("table tr").last().after(next_row);
     $('#new_row input').val("");
